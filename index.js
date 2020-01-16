@@ -33,7 +33,7 @@ app.use(function (ctx , next) {
     });
 });
 app.use(koaJwt({secret: jwtSecert}).unless({
-    path:["/^\/login" , "/^\/register"]
+    path:["/login" , "/register"]
 }));
 app.use(router.routes());
 koaValidate(app);
