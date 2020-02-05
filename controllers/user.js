@@ -1,6 +1,6 @@
 const userHandle = require('../service/user');
 exports.login = async (ctx) => {
-    console.log(ctx.request);
+    console.log(ctx);
     ctx.body = "hello world";
 };
 exports.register = async (ctx) => {

@@ -3,7 +3,7 @@ const config = require('../conf/config');
 
 class Store{
     constructor(space) {
-        this.redis = new Redis(config.redisConfig.toConfig());
+        this.redis = new Redis(config.redis);
         this.space = space;
     }
 
