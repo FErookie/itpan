@@ -12,5 +12,10 @@ module.exports = {
         prefix : 'sam:',
         ttl : 60 * 60 * 23,
         db: 0
+    },
+    log: {
+        root: logDir,
+        err: path.join(logDir, 'err.log'),
+        info: path.join(logDir, 'info.log')
     }
 };
