@@ -1,12 +1,15 @@
+const path = require('path');
+const logDir = './log';
 module.exports = {
-    db:{
+
+    db: {
         name: 'postgres',
         username: 'postgres',
         pwd: 'postgres',
         host: '127.0.0.1',
         database: 'new',
     },
-    redis:{
+    redis: {
         host : '127.0.0.1',
         port : 6379,　
         prefix : 'sam:',

@@ -14,27 +14,11 @@ app.use(cors({
     exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
     maxAge: 5,
     credentials: true,
-    allowMethods: ['GET', 'POST', 'DELETE'],
+    allowMethods: ['*'],
     allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }));
 
 app.use(router.allowedMethods());
-//设置token密钥
-const jwtSecert = 'jwtSecret';
-const tokenExpiresTime = 1000 * 60 * 60 * 24 * 7;
-app.use(function (ctx , next) {
-    return next().catch(err => {
-        if(401 == err.status){
-            ctx.status = 401;
-            ctx.body = " protected resource , use Authorization header to get access\n";
-        }else{
-            throw err;
-        }
-    });
-});
-app.use(koaJwt({secret: jwtSecert}).unless({
-    path:["/login" , "/register"]
-}));
 app.use(router.routes());
 koaValidate(app);
 module.exports = app;

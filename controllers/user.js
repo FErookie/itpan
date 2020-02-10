@@ -1,7 +1,11 @@
 const userHandle = require('../service/user');
 exports.login = async (ctx) => {
+    console.log(1);
     console.log(ctx);
-    ctx.body = "hello world";
+    ctx.body = {
+        name: "新建文件夹2",
+        type: "dir"
+    };
 };
 exports.register = async (ctx) => {
     console.log(ctx.request);
